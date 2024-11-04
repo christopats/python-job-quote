@@ -1,0 +1,18 @@
+{% block content %}
+
+<h2>Choose a job</h2>
+<select name="option" id="job-type" hx-get="/measurements" hx-target="#content" hx-trigger="change"
+    hx-target="outerHTML">
+    <option value="job-type" disabled="True" selected="True">Choose a job</option>
+
+    <option value="panel_fence">Panel Fence
+    </option>
+    <option value="hit_miss">
+        Hit and Miss Fence
+    </option>
+    <option value="feather_fence">Featheredge
+        Fence</option>
+
+</select>
+
+{% endblock %}

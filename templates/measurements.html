@@ -1,0 +1,24 @@
+<div id="content">
+
+    <form hx-post="/calculations" hx-target="#content" hx-swap="outerHTML">
+        <input type="hidden" name="selected_option" value="{{ selected_option }}">
+        <div>
+            <label for="Length">Length</label>
+            <input type="number" required {% if not enabled_inputs.Length %}disabled{% endif %}>
+        </div>
+        <div>
+            <label for="Width">Width</label>
+            <input type="number" required {% if not enabled_inputs.Width %}disabled{% endif %}>
+        </div>
+        <div>
+            <label for="Height">Height</label>
+            <input type="number" required {% if not enabled_inputs.Height %}disabled{% endif %}>
+        </div>
+        <div>
+            <label for="Area">Area</label>
+            <input type="number" required {% if not enabled_inputs.Area %}disabled{% endif %}>
+        </div>
+        <button type="submit">Calculate</button>
+    </form>
+
+</div>

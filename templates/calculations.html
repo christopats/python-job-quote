@@ -1,0 +1,28 @@
+<div id="content">
+    <h3>Calculation Results</h3>
+    <table border="1">
+        <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Cost</th>
+        </tr>
+        {% for item in results %}
+        <tr>
+            <td>{{ item.item }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>${{ "%.2f"|format(item.cost) }}</td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="2"><strong>Total Cost</strong></td>
+            <td><strong>${{ "%.2f"|format(total_cost) }}</strong></td>
+        </tr>
+    </table>
+    <button hx-post="/back-to-measurements" hx-target="#content" hx-swap="outerHTML"
+        hx-include="[name='selected_option']">
+        Back to Measurements
+    </button>
+
+    <input type="hidden" name="selected_option" value="{{ selected_option }}">
+</div>
+</div>
